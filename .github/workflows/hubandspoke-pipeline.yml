@@ -6,7 +6,7 @@ on:
       rootFolder:
         description: 'Path to Terraform root directory'
         required: true
-        default: './projectGCP'
+        default: './projectGCP' 
       tfvars:
         description: 'Path to .tfvars file (relative to rootFolder)'
         required: true
@@ -29,7 +29,6 @@ jobs:
     name: "Execute Terraform Task on GCP"
     runs-on: ubuntu-latest
     
-    # Required permissions for Workload Identity Federation
     permissions:
       contents: 'read'
       id-token: 'write'
