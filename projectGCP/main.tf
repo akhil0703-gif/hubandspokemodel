@@ -24,7 +24,8 @@ resource "google_compute_instance" "bastion_host" {
 
   boot_disk {
     initialize_params { 
-      image = data.google_compute_image.latest_debian.self_link 
+      image = "ubuntu-minimal-2210-kinetic-amd64-v20230126"
+       type  = "pd-standard"
     }
   }
 
@@ -40,7 +41,8 @@ resource "google_compute_instance" "spoke2_backend_vm" {
 
   boot_disk {
     initialize_params { 
-      image = data.google_compute_image.latest_debian.self_link 
+     image = "ubuntu-minimal-2210-kinetic-amd64-v20230126"
+       type  = "pd-standard"
     }
   }
 
