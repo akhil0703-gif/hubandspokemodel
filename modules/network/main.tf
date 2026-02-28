@@ -58,6 +58,9 @@ resource "google_compute_firewall" "dynamic_rules" {
 
   name          = "fw-${each.key}-${var.env_suffix}"
   network       = "${each.value.network_name}-${var.env_suffix}"
+  depends_on = [
+    google_compute_network.hub_vpc
+  ]
   source_ranges = each.value.source_ranges
   target_tags   = each.value.target_tags
 
