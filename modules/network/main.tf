@@ -1,3 +1,4 @@
+/* 
 # HUB VPC & SUBNETS
 resource "google_compute_network" "hub_vpc" {
   name                    = "${var.vpcs["hub"].name}-${var.env_suffix}"
@@ -93,4 +94,5 @@ resource "google_compute_network_peering" "spoke2_to_hub" {
   name         = "peer-spoke2-to-hub"
   network      = google_compute_network.spoke2_vpc.id
   peer_network = google_compute_network.hub_vpc.id
-}
+} 
+*/
